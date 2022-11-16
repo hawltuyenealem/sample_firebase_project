@@ -12,8 +12,9 @@ class AuthLoading extends AuthState{
   @override
   List<Object> get props => [];
 }
-class AuthLogged extends AuthState{
-
+class AuthLoaded extends AuthState{
+  FireResponse response;
+  AuthLoaded({required this.response});
   @override
   List<Object> get props => [];
 }

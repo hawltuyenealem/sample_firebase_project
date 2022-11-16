@@ -8,20 +8,12 @@ import 'package:sample_firebase_project/data/models/login_request.dart';
 
 class ItemService {
 
-  Dio dio = Dio(BaseOptions(
-    connectTimeout: 500000,
-    receiveTimeout: 500000,
-    headers: {
-
-      "Content-Type": "application/json",
-    },
-  ));
   final db = FirebaseFirestore.instance;
 
-  Response addItem(ItemModel itemModel){
+ Future<void> addItem(ItemModel itemModel)async{
     try{
-      var response = db.collection('items').doc().set(itemModel.toJson()) as Response;
-      return response;
+    db.collection('items').doc().set(itemModel.toJson()) ;
+
     }catch(e){
       throw Exception();
     }
