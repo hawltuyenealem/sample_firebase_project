@@ -18,6 +18,11 @@ class ItemsLoaded extends ItemState{
   @override
   List<Object> get props => [];
 }
+class ItemSuccessfullOperation extends ItemState{
+  bool state;
+  ItemSuccessfullOperation({required this.state});
+  List<Object> get props => [];
+}
 class ItemError extends ItemState{
   ErrorResponse errorResponse;
 
