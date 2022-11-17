@@ -24,6 +24,6 @@ Future init() async{
 
   // service
   sl.registerFactory<ItemService>(() =>ItemService() );
-  sl.registerFactory<ItemService>(() => ItemService());
+  sl.registerLazySingleton<ItemService>(() => ItemService());
 
 }
